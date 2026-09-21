@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <title>QR Generator — TOOLBOX</title>
+
+  <link rel="stylesheet" href="qr.css">
+
+  <link
+    rel="stylesheet"
+    href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css"
+  >
+</head>
+
+<body>
+
+  <!-- Background -->
+  <div class="background">
+    <div class="orb one"></div>
+    <div class="orb two"></div>
+    <div class="grid-bg"></div>
+  </div>
+
+  <!-- Navbar -->
+  <header class="navbar">
+
+    <a href="../../index.html" class="logo">
+      <span class="logo-icon">
+        <i class="fa-solid fa-toolbox"></i>
+      </span>
+
+      <span>
+        TOOL<span class="purple">BOX</span>
+      </span>
+    </a>
+
+    <a href="../../index.html#tools" class="back-link">
+      <i class="fa-solid fa-arrow-left"></i>
+      Back to Tools
+    </a>
+
+  </header>
+
+  <!-- Main -->
+  <main class="tool-page">
+
+    <div class="tool-header">
+
+      <span class="tool-badge">
+        DEVELOPER TOOLS
+      </span>
+
+      <h1>
+        QR Code <span>Generator.</span>
+      </h1>
+
+      <p>
+        Turn text, links and contact information into QR codes.
+      </p>
+
+    </div>
+
+    <section class="tool-box">
+
+      <div class="field-group">
+
+        <label class="field-label" for="qrInput">
+          Enter Text or URL
+        </label>
+
+        <textarea
+          id="qrInput"
+          class="text-area"
+          placeholder="https://example.com"
+          rows="5"
+        ></textarea>
+
+      </div>
+
+      <button
+        class="primary-btn"
+        id="generateQR"
+        type="button"
+      >
+        <i class="fa-solid fa-qrcode"></i>
+        Generate QR Code
+      </button>
+
+      <!-- Result -->
+      <div class="result-box qr-result" id="qrResult">
+
+        <div class="result-title">
+          YOUR QR CODE
+        </div>
+
+        <div class="qr-wrapper">
+          <div id="qrCanvas"></div>
+        </div>
+
+        <button
+          class="primary-btn download-btn"
+          id="downloadQR"
+          type="button"
+        >
+          <i class="fa-solid fa-download"></i>
+          Download PNG
+        </button>
+
+      </div>
+
+      <div id="status" class="status"></div>
+
+    </section>
+
+  </main>
+
+  <footer class="footer">
+    <div class="footer-copy">
+
+            © <span id="year"></span> TOOLBOX.
+            Made with
+            <i class="fa-solid fa-heart"></i>
+            by Gorav.
+
+        </div>
+
+  </footer>
+
+  <!-- QR Code Library -->
+  <script src="./qrcode.min.js"></script>
+
+  <!-- Your JavaScript -->
+  <script src="./qr.js"></script>
+
+</body>
+</html>

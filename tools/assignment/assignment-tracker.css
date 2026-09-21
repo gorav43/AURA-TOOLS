@@ -1,0 +1,1058 @@
+/* =========================================
+   TOOLBOX - ASSIGNMENT TRACKER
+   Apple Inspired UI
+========================================= */
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+
+:root {
+
+  --bg: #f5f5f7;
+
+  --surface: #ffffff;
+
+  --surface-2: #fafafa;
+
+  --text: #1d1d1f;
+
+  --muted: #6e6e73;
+
+  --border: #d2d2d7;
+
+  --button: #1d1d1f;
+
+  --button-text: #ffffff;
+
+  --danger: #ff3b30;
+
+  --success: #34c759;
+
+  --warning: #ff9500;
+
+  --shadow:
+    0 12px 35px rgba(0, 0, 0, 0.07);
+
+  --radius: 22px;
+}
+
+
+body.dark-mode {
+
+  --bg: #000000;
+
+  --surface: #111111;
+
+  --surface-2: #181818;
+
+  --text: #f5f5f7;
+
+  --muted: #a1a1a6;
+
+  --border: #2c2c2e;
+
+  --button: #ffffff;
+
+  --button-text: #000000;
+
+  --shadow:
+    0 12px 35px rgba(0, 0, 0, 0.35);
+}
+
+
+/* =========================================
+   PAGE
+========================================= */
+
+body.assignment-page {
+
+  min-height: 100vh;
+
+  background: var(--bg);
+
+  color: var(--text);
+
+  font-family:
+    -apple-system,
+    BlinkMacSystemFont,
+    "SF Pro Display",
+    "Segoe UI",
+    sans-serif;
+}
+
+
+/* =========================================
+   HEADER
+========================================= */
+
+.assignment-page .header {
+
+  width: 100%;
+
+  background: var(--surface);
+
+  border-bottom:
+    1px solid var(--border);
+}
+
+
+.assignment-page .navbar {
+
+  max-width: 1200px;
+
+  margin: auto;
+
+  padding: 18px 24px;
+
+  display: flex;
+
+  align-items: center;
+
+  justify-content: space-between;
+}
+
+
+.assignment-page .logo {
+
+  color: var(--text);
+
+  text-decoration: none;
+
+  font-size: 23px;
+
+  font-weight: 800;
+
+  letter-spacing: -1px;
+}
+
+
+.assignment-page .logo span {
+
+  font-weight: 400;
+}
+
+
+.assignment-page .nav-links {
+
+  list-style: none;
+
+  display: flex;
+
+  gap: 30px;
+}
+
+
+.assignment-page .nav-links a {
+
+  color: var(--muted);
+
+  text-decoration: none;
+
+  font-size: 14px;
+
+  transition: 0.2s;
+}
+
+
+.assignment-page .nav-links a:hover {
+
+  color: var(--text);
+}
+
+
+/* =========================================
+   CONTAINER
+========================================= */
+
+.assignment-container {
+
+  width:
+    min(1100px, calc(100% - 32px));
+
+  margin: auto;
+
+  padding:
+    60px 0 80px;
+}
+
+
+/* =========================================
+   HERO
+========================================= */
+
+.assignment-hero {
+
+  text-align: center;
+
+  margin-bottom: 45px;
+}
+
+
+.assignment-icon {
+
+  width: 64px;
+
+  height: 64px;
+
+  margin:
+    0 auto 18px;
+
+  display: grid;
+
+  place-items: center;
+
+  border-radius: 18px;
+
+  background: var(--button);
+
+  color: var(--button-text);
+
+  font-size: 25px;
+}
+
+
+.assignment-badge {
+
+  display: inline-block;
+
+  padding: 7px 13px;
+
+  border:
+    1px solid var(--border);
+
+  border-radius: 999px;
+
+  color: var(--muted);
+
+  font-size: 12px;
+
+  font-weight: 600;
+
+  margin-bottom: 18px;
+}
+
+
+.assignment-hero h1 {
+
+  font-size:
+    clamp(40px, 6vw, 68px);
+
+  line-height: 1;
+
+  letter-spacing: -3px;
+
+  margin-bottom: 18px;
+}
+
+
+.assignment-hero h1 span {
+
+  font-weight: 400;
+}
+
+
+.assignment-hero p {
+
+  max-width: 600px;
+
+  margin: auto;
+
+  color: var(--muted);
+
+  font-size: 17px;
+
+  line-height: 1.6;
+}
+
+
+/* =========================================
+   STATS
+========================================= */
+
+.stats-grid {
+
+  display: grid;
+
+  grid-template-columns:
+    repeat(4, 1fr);
+
+  gap: 16px;
+
+  margin-bottom: 25px;
+}
+
+
+.stat-card {
+
+  background: var(--surface);
+
+  border:
+    1px solid var(--border);
+
+  border-radius: 18px;
+
+  padding: 20px;
+
+  display: flex;
+
+  align-items: center;
+
+  gap: 14px;
+
+  box-shadow: var(--shadow);
+}
+
+
+.stat-icon {
+
+  width: 44px;
+
+  height: 44px;
+
+  border-radius: 13px;
+
+  display: grid;
+
+  place-items: center;
+
+  background: var(--button);
+
+  color: var(--button-text);
+
+  flex-shrink: 0;
+}
+
+
+.stat-card span {
+
+  display: block;
+
+  color: var(--muted);
+
+  font-size: 12px;
+
+  margin-bottom: 4px;
+}
+
+
+.stat-card strong {
+
+  font-size: 25px;
+
+  letter-spacing: -1px;
+}
+
+
+/* =========================================
+   CARD
+========================================= */
+
+.assignment-card {
+
+  background: var(--surface);
+
+  border:
+    1px solid var(--border);
+
+  border-radius: var(--radius);
+
+  padding: 28px;
+
+  margin-bottom: 25px;
+
+  box-shadow: var(--shadow);
+}
+
+
+.card-heading {
+
+  display: flex;
+
+  align-items: center;
+
+  justify-content: space-between;
+
+  margin-bottom: 25px;
+}
+
+
+.card-heading h2 {
+
+  font-size: 21px;
+
+  letter-spacing: -0.5px;
+}
+
+
+.card-heading p {
+
+  color: var(--muted);
+
+  font-size: 14px;
+
+  margin-top: 5px;
+}
+
+
+.card-heading > i {
+
+  color: var(--muted);
+
+  font-size: 20px;
+}
+
+
+/* =========================================
+   FORM
+========================================= */
+
+.form-grid {
+
+  display: grid;
+
+  grid-template-columns:
+    repeat(3, 1fr);
+
+  gap: 18px;
+
+  margin-bottom: 24px;
+}
+
+
+.full-width {
+
+  grid-column:
+    1 / -1;
+}
+
+
+.input-group {
+
+  display: flex;
+
+  flex-direction: column;
+
+  gap: 8px;
+}
+
+
+.input-group label {
+
+  font-size: 13px;
+
+  font-weight: 600;
+}
+
+
+.input-group input,
+.input-group select {
+
+  width: 100%;
+
+  height: 48px;
+
+  padding:
+    0 14px;
+
+  background: var(--surface-2);
+
+  color: var(--text);
+
+  border:
+    1px solid var(--border);
+
+  border-radius: 12px;
+
+  outline: none;
+
+  font-size: 14px;
+
+  transition: 0.2s;
+}
+
+
+.input-group input:focus,
+.input-group select:focus {
+
+  border-color: var(--text);
+}
+
+
+/* =========================================
+   BUTTON
+========================================= */
+
+.primary-btn {
+
+  min-height: 46px;
+
+  padding:
+    0 20px;
+
+  border: none;
+
+  border-radius: 12px;
+
+  background: var(--button);
+
+  color: var(--button-text);
+
+  font-size: 14px;
+
+  font-weight: 600;
+
+  cursor: pointer;
+
+  display: inline-flex;
+
+  align-items: center;
+
+  justify-content: center;
+
+  gap: 8px;
+
+  transition: 0.2s;
+}
+
+
+.primary-btn:hover {
+
+  transform: translateY(-1px);
+}
+
+
+/* =========================================
+   TOOLBAR
+========================================= */
+
+.toolbar {
+
+  display: flex;
+
+  align-items: center;
+
+  justify-content: space-between;
+
+  gap: 20px;
+
+  margin-bottom: 25px;
+}
+
+
+.toolbar h2 {
+
+  font-size: 22px;
+
+  letter-spacing: -0.5px;
+}
+
+
+.toolbar p {
+
+  color: var(--muted);
+
+  font-size: 14px;
+
+  margin-top: 5px;
+}
+
+
+.filters {
+
+  display: flex;
+
+  gap: 7px;
+
+  padding: 4px;
+
+  border:
+    1px solid var(--border);
+
+  border-radius: 12px;
+
+  background: var(--surface-2);
+}
+
+
+.filter-btn {
+
+  border: none;
+
+  background: transparent;
+
+  color: var(--muted);
+
+  padding:
+    8px 12px;
+
+  border-radius: 8px;
+
+  cursor: pointer;
+
+  font-size: 12px;
+
+  font-weight: 600;
+}
+
+
+.filter-btn.active {
+
+  background: var(--button);
+
+  color: var(--button-text);
+}
+
+
+/* =========================================
+   ASSIGNMENT LIST
+========================================= */
+
+.assignment-list {
+
+  display: flex;
+
+  flex-direction: column;
+
+  gap: 12px;
+}
+
+
+.assignment-item {
+
+  border:
+    1px solid var(--border);
+
+  border-radius: 16px;
+
+  padding: 18px;
+
+  display: grid;
+
+  grid-template-columns:
+    auto 1fr auto;
+
+  align-items: center;
+
+  gap: 15px;
+
+  background: var(--surface-2);
+
+  transition: 0.2s;
+}
+
+
+.assignment-item:hover {
+
+  transform: translateY(-1px);
+}
+
+
+/* =========================================
+   CHECKBOX
+========================================= */
+
+.complete-check {
+
+  width: 22px;
+
+  height: 22px;
+
+  border:
+    1.5px solid var(--border);
+
+  border-radius: 50%;
+
+  background: transparent;
+
+  color: white;
+
+  cursor: pointer;
+
+  display: grid;
+
+  place-items: center;
+
+  flex-shrink: 0;
+}
+
+
+.assignment-item.completed
+.complete-check {
+
+  background: var(--button);
+
+  border-color: var(--button);
+}
+
+
+/* =========================================
+   CONTENT
+========================================= */
+
+.assignment-content h3 {
+
+  font-size: 15px;
+
+  margin-bottom: 6px;
+
+  letter-spacing: -0.2px;
+}
+
+
+.assignment-item.completed
+.assignment-content h3 {
+
+  text-decoration: line-through;
+
+  color: var(--muted);
+}
+
+
+.assignment-meta {
+
+  display: flex;
+
+  flex-wrap: wrap;
+
+  gap: 8px;
+}
+
+
+.meta-item {
+
+  color: var(--muted);
+
+  font-size: 11px;
+
+  display: inline-flex;
+
+  align-items: center;
+
+  gap: 4px;
+}
+
+
+/* =========================================
+   BADGES
+========================================= */
+
+.badge {
+
+  padding:
+    5px 9px;
+
+  border-radius: 999px;
+
+  font-size: 10px;
+
+  font-weight: 700;
+}
+
+
+.priority-high {
+
+  background:
+    rgba(255, 59, 48, 0.12);
+
+  color: var(--danger);
+}
+
+
+.priority-medium {
+
+  background:
+    rgba(255, 149, 0, 0.12);
+
+  color: var(--warning);
+}
+
+
+.priority-low {
+
+  background:
+    rgba(52, 199, 89, 0.12);
+
+  color: var(--success);
+}
+
+
+.overdue {
+
+  color: var(--danger) !important;
+
+  font-weight: 700;
+}
+
+
+.completed-badge {
+
+  background:
+    rgba(52, 199, 89, 0.12);
+
+  color: var(--success);
+}
+
+
+/* =========================================
+   DELETE
+========================================= */
+
+.delete-btn {
+
+  width: 38px;
+
+  height: 38px;
+
+  border:
+    1px solid var(--border);
+
+  border-radius: 10px;
+
+  background: transparent;
+
+  color: var(--muted);
+
+  cursor: pointer;
+
+  display: grid;
+
+  place-items: center;
+
+  transition: 0.2s;
+}
+
+
+.delete-btn:hover {
+
+  color: var(--danger);
+
+  border-color: var(--danger);
+}
+
+
+/* =========================================
+   EMPTY
+========================================= */
+
+.empty-state {
+
+  text-align: center;
+
+  padding:
+    55px 20px;
+
+  color: var(--muted);
+}
+
+
+.empty-state i {
+
+  font-size: 35px;
+
+  margin-bottom: 15px;
+
+  opacity: 0.5;
+}
+
+
+.empty-state h3 {
+
+  color: var(--text);
+
+  font-size: 17px;
+
+  margin-bottom: 6px;
+}
+
+
+.empty-state p {
+
+  font-size: 13px;
+}
+
+
+/* =========================================
+   BACK
+========================================= */
+
+.back-link {
+
+  display: flex;
+
+  width: fit-content;
+
+  align-items: center;
+
+  gap: 8px;
+
+  margin:
+    30px auto 0;
+
+  color: var(--muted);
+
+  text-decoration: none;
+
+  font-size: 14px;
+}
+
+
+.back-link:hover {
+
+  color: var(--text);
+}
+
+
+/* =========================================
+   FOOTER
+========================================= */
+
+.assignment-footer {
+
+  border-top:
+    1px solid var(--border);
+
+  padding: 25px;
+
+  text-align: center;
+
+  color: var(--muted);
+
+  font-size: 13px;
+}
+
+
+/* =========================================
+   RESPONSIVE
+========================================= */
+
+@media (max-width: 850px) {
+
+  .stats-grid {
+
+    grid-template-columns:
+      repeat(2, 1fr);
+  }
+
+  .form-grid {
+
+    grid-template-columns:
+      repeat(2, 1fr);
+  }
+
+}
+
+
+@media (max-width: 650px) {
+
+  .assignment-page .navbar {
+
+    padding: 16px;
+  }
+
+  .assignment-page .nav-links {
+
+    display: none;
+  }
+
+  .assignment-container {
+
+    width:
+      min(100% - 20px, 600px);
+
+    padding-top: 40px;
+  }
+
+  .assignment-hero h1 {
+
+    font-size: 44px;
+
+    letter-spacing: -2px;
+  }
+
+  .assignment-card {
+
+    padding: 20px;
+
+    border-radius: 18px;
+  }
+
+  .stats-grid {
+
+    grid-template-columns:
+      repeat(2, 1fr);
+  }
+
+  .stat-card {
+
+    padding: 15px;
+  }
+
+  .stat-icon {
+
+    width: 38px;
+
+    height: 38px;
+  }
+
+  .stat-card strong {
+
+    font-size: 21px;
+  }
+
+  .form-grid {
+
+    grid-template-columns: 1fr;
+  }
+
+  .full-width {
+
+    grid-column: auto;
+  }
+
+  .primary-btn {
+
+    width: 100%;
+  }
+
+  .toolbar {
+
+    align-items: flex-start;
+
+    flex-direction: column;
+  }
+
+  .filters {
+
+    width: 100%;
+  }
+
+  .filter-btn {
+
+    flex: 1;
+  }
+
+  .assignment-item {
+
+    grid-template-columns:
+      auto 1fr auto;
+
+    padding: 15px;
+
+    gap: 10px;
+  }
+
+}
+
+
+@media (max-width: 400px) {
+
+  .stats-grid {
+
+    grid-template-columns: 1fr;
+  }
+
+}

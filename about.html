@@ -1,0 +1,670 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta
+        name="viewport"
+        content="width=device-width, initial-scale=1.0"
+    >
+
+    <title>About | TOOLBOX</title>
+
+    <link rel="stylesheet" href="style.css">
+
+    <link
+        rel="stylesheet"
+        href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css"
+    >
+
+    <style>
+
+        /* =========================================
+           ABOUT PAGE
+        ========================================= */
+
+        .about-page {
+            min-height: 100vh;
+        }
+
+        .about-main {
+            width: min(1100px, calc(100% - 32px));
+            margin: auto;
+            padding: 80px 0;
+        }
+
+        /* HERO */
+
+        .about-hero {
+            text-align: center;
+            max-width: 800px;
+            margin: 0 auto 70px;
+        }
+
+        .about-icon {
+            width: 70px;
+            height: 70px;
+            margin: 0 auto 22px;
+
+            display: grid;
+            place-items: center;
+
+            background: var(--button, #1d1d1f);
+            color: var(--button-text, #fff);
+
+            border-radius: 20px;
+
+            font-size: 27px;
+        }
+
+        .about-badge {
+            display: inline-block;
+
+            padding: 7px 14px;
+
+            border: 1px solid var(--border, #d2d2d7);
+            border-radius: 999px;
+
+            color: var(--text-secondary, #6e6e73);
+
+            font-size: 12px;
+            font-weight: 600;
+
+            margin-bottom: 20px;
+        }
+
+        .about-hero h1 {
+            font-size: clamp(42px, 7vw, 72px);
+
+            line-height: 1;
+
+            letter-spacing: -4px;
+
+            margin-bottom: 22px;
+
+            color: var(--text, #1d1d1f);
+        }
+
+        .about-hero h1 span {
+            font-weight: 400;
+        }
+
+        .about-hero p {
+            color: var(--text-secondary, #6e6e73);
+
+            font-size: 18px;
+
+            line-height: 1.7;
+        }
+
+
+        /* INTRO */
+
+        .about-card {
+            background: var(--surface, #fff);
+
+            border: 1px solid var(--border, #d2d2d7);
+
+            border-radius: 24px;
+
+            padding: 40px;
+
+            margin-bottom: 24px;
+
+            box-shadow:
+                0 15px 40px rgba(0, 0, 0, 0.06);
+        }
+
+        .about-card h2 {
+            color: var(--text, #1d1d1f);
+
+            font-size: 28px;
+
+            letter-spacing: -1px;
+
+            margin-bottom: 14px;
+        }
+
+        .about-card p {
+            color: var(--text-secondary, #6e6e73);
+
+            font-size: 15px;
+
+            line-height: 1.8;
+
+            margin-bottom: 12px;
+        }
+
+
+        /* FEATURES */
+
+        .features-grid {
+            display: grid;
+
+            grid-template-columns:
+                repeat(3, 1fr);
+
+            gap: 18px;
+
+            margin-top: 25px;
+        }
+
+        .feature-card {
+            background: var(--surface, #fff);
+
+            border: 1px solid var(--border, #d2d2d7);
+
+            border-radius: 20px;
+
+            padding: 28px;
+
+            transition: transform .2s ease,
+                        box-shadow .2s ease;
+        }
+
+        .feature-card:hover {
+            transform: translateY(-4px);
+
+            box-shadow:
+                0 14px 35px rgba(0, 0, 0, 0.08);
+        }
+
+        .feature-icon {
+            width: 48px;
+            height: 48px;
+
+            display: grid;
+            place-items: center;
+
+            border-radius: 14px;
+
+            background: var(--surface-2, #f5f5f7);
+
+            color: var(--text, #1d1d1f);
+
+            margin-bottom: 18px;
+
+            font-size: 18px;
+        }
+
+        .feature-card h3 {
+            color: var(--text, #1d1d1f);
+
+            font-size: 17px;
+
+            margin-bottom: 8px;
+        }
+
+        .feature-card p {
+            color: var(--text-secondary, #6e6e73);
+
+            font-size: 13px;
+
+            line-height: 1.6;
+        }
+
+
+        /* STATS */
+
+        .stats-grid {
+            display: grid;
+
+            grid-template-columns:
+                repeat(3, 1fr);
+
+            gap: 15px;
+
+            margin-top: 25px;
+        }
+
+        .stat-box {
+            text-align: center;
+
+            padding: 25px;
+
+            background: var(--surface-2, #f5f5f7);
+
+            border-radius: 18px;
+        }
+
+        .stat-box strong {
+            display: block;
+
+            color: var(--text, #1d1d1f);
+
+            font-size: 30px;
+
+            letter-spacing: -1px;
+
+            margin-bottom: 5px;
+        }
+
+        .stat-box span {
+            color: var(--text-secondary, #6e6e73);
+
+            font-size: 12px;
+        }
+
+
+        /* BACK BUTTON */
+
+        .about-actions {
+            display: flex;
+
+            justify-content: center;
+
+            gap: 12px;
+
+            margin-top: 45px;
+        }
+
+        .about-button {
+            display: inline-flex;
+
+            align-items: center;
+
+            justify-content: center;
+
+            gap: 8px;
+
+            min-height: 46px;
+
+            padding: 0 20px;
+
+            border-radius: 12px;
+
+            text-decoration: none;
+
+            font-size: 14px;
+
+            font-weight: 600;
+
+            transition: .2s;
+        }
+
+        .about-button.primary {
+            background: var(--button, #1d1d1f);
+
+            color: var(--button-text, #fff);
+        }
+
+        .about-button.secondary {
+            background: transparent;
+
+            color: var(--text, #1d1d1f);
+
+            border:
+                1px solid var(--border, #d2d2d7);
+        }
+
+        .about-button:hover {
+            transform: translateY(-2px);
+        }
+
+
+        /* FOOTER */
+
+        .about-footer {
+            border-top:
+                1px solid var(--border, #d2d2d7);
+
+            padding: 25px;
+
+            text-align: center;
+
+            color: var(--text-secondary, #6e6e73);
+
+            font-size: 13px;
+        }
+
+
+        /* DARK MODE */
+
+        body.dark-mode .about-card,
+        body.dark-mode .feature-card {
+            box-shadow:
+                0 15px 40px rgba(0, 0, 0, 0.25);
+        }
+
+
+        /* RESPONSIVE */
+
+        @media (max-width: 750px) {
+
+            .about-main {
+                padding: 55px 0;
+            }
+
+            .about-hero {
+                margin-bottom: 45px;
+            }
+
+            .about-hero h1 {
+                letter-spacing: -2px;
+            }
+
+            .about-card {
+                padding: 25px;
+            }
+
+            .features-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .stats-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .about-actions {
+                flex-direction: column;
+            }
+
+            .about-button {
+                width: 100%;
+            }
+        }
+
+    </style>
+</head>
+
+
+<body class="about-page">
+
+
+    <!-- HEADER -->
+
+    <header class="header">
+
+        <nav class="navbar">
+
+            <a
+                href="index.html"
+                class="logo"
+            >
+                TOOL<span>BOX</span>
+            </a>
+
+
+            <ul class="nav-links">
+
+                <li>
+                    <a href="index.html">
+                        Home
+                    </a>
+                </li>
+
+                <li>
+                    <a href="index.html#tools">
+                        All Tools
+                    </a>
+                </li>
+
+                <li>
+                    <a
+                        href="about.html"
+                        class="active"
+                    >
+                        About
+                    </a>
+                </li>
+
+            </ul>
+
+
+            <button
+                id="themeBtn"
+                class="theme-btn"
+                aria-label="Switch to dark mode"
+            >
+                <i class="fa-solid fa-moon"></i>
+            </button>
+
+        </nav>
+
+    </header>
+
+
+
+    <!-- MAIN -->
+
+    <main class="about-main">
+
+
+        <!-- HERO -->
+
+        <section class="about-hero">
+
+            <div class="about-icon">
+                <i class="fa-solid fa-toolbox"></i>
+            </div>
+
+            <span class="about-badge">
+                ABOUT TOOLBOX
+            </span>
+
+            <h1>
+                Everything you need.
+                <span>In one place.</span>
+            </h1>
+
+            <p>
+                TOOLBOX is a collection of simple,
+                useful and practical digital tools
+                designed to make everyday tasks
+                faster and easier.
+            </p>
+
+        </section>
+
+
+
+        <!-- ABOUT -->
+
+        <section class="about-card">
+
+            <h2>
+                What is TOOLBOX?
+            </h2>
+
+            <p>
+                TOOLBOX brings useful student,
+                developer and everyday utility tools
+                together in one clean platform.
+            </p>
+
+            <p>
+                Instead of searching for different
+                websites for different tasks,
+                TOOLBOX keeps everything organized
+                and easy to access.
+            </p>
+
+            <p>
+                From calculating CGPA and tracking
+                attendance to creating QR codes,
+                compressing images and managing
+                assignments, the goal is simple:
+                useful tools without unnecessary
+                complexity.
+            </p>
+
+        </section>
+
+
+
+        <!-- FEATURES -->
+
+        <section class="features-grid">
+
+
+            <article class="feature-card">
+
+                <div class="feature-icon">
+                    <i class="fa-solid fa-graduation-cap"></i>
+                </div>
+
+                <h3>
+                    Student Tools
+                </h3>
+
+                <p>
+                    Useful tools for CGPA,
+                    attendance, assignments,
+                    exams and college life.
+                </p>
+
+            </article>
+
+
+
+            <article class="feature-card">
+
+                <div class="feature-icon">
+                    <i class="fa-solid fa-code"></i>
+                </div>
+
+                <h3>
+                    Developer Tools
+                </h3>
+
+                <p>
+                    Handy utilities designed
+                    to make common development
+                    tasks simpler.
+                </p>
+
+            </article>
+
+
+
+            <article class="feature-card">
+
+                <div class="feature-icon">
+                    <i class="fa-solid fa-bolt"></i>
+                </div>
+
+                <h3>
+                    Simple & Fast
+                </h3>
+
+                <p>
+                    Clean interfaces, quick access
+                    and tools designed to stay
+                    easy to use.
+                </p>
+
+            </article>
+
+
+        </section>
+
+
+
+        <!-- STATS -->
+
+        <section class="about-card">
+
+            <h2>
+                Built for everyday use.
+            </h2>
+
+            <p>
+                TOOLBOX is continuously evolving
+                with new tools and improvements.
+            </p>
+
+
+            <div class="stats-grid">
+
+                <div class="stat-box">
+
+                    <strong>10+</strong>
+
+                    <span>
+                        Useful Tools
+                    </span>
+
+                </div>
+
+
+                <div class="stat-box">
+
+                    <strong>3</strong>
+
+                    <span>
+                        Tool Categories
+                    </span>
+
+                </div>
+
+
+                <div class="stat-box">
+
+                    <strong>100%</strong>
+
+                    <span>
+                        Browser Based
+                    </span>
+
+                </div>
+
+            </div>
+
+        </section>
+
+
+
+        <!-- ACTIONS -->
+
+        <div class="about-actions">
+
+            <a
+                href="index.html#tools"
+                class="about-button primary"
+            >
+
+                <i class="fa-solid fa-wand-magic-sparkles"></i>
+
+                Explore Tools
+
+            </a>
+
+
+            <a
+                href="index.html"
+                class="about-button secondary"
+            >
+
+                <i class="fa-solid fa-arrow-left"></i>
+
+                Back Home
+
+            </a>
+
+        </div>
+
+
+    </main>
+
+
+
+    <!-- FOOTER -->
+
+    <footer class="about-footer">
+
+         <div class="footer-copy">
+
+            © <span id="year"></span> TOOLBOX.
+            Made with
+            <i class="fa-solid fa-heart"></i>
+            by Gorav.
+
+        </div>
+
+    </footer>
+
+
+
+    <script src="script.js"></script>
+
+</body>
+</html>
