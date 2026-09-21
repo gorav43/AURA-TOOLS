@@ -1,0 +1,348 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Attendance Maker | TOOLBOX</title>
+
+    <link rel="stylesheet" href="attendance-maker.css">
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+</head>
+
+<body class="attendance-page">
+
+    <!-- ================= HEADER ================= -->
+
+    <header class="header">
+        <nav class="navbar">
+
+            <a href="../../index.html" class="logo">
+                TOOL<span>BOX</span>
+            </a>
+
+            <ul class="nav-links">
+                <li>
+                    <a href="../../index.html">Home</a>
+                </li>
+
+                <li>
+                    <a href="../../index.html">Tools</a>
+                </li>
+
+                <li>
+                    <a href="../../about.html">About</a>
+                </li>
+            </ul>
+
+        </nav>
+    </header>
+
+
+    <!-- ================= MAIN ================= -->
+
+    <main class="attendance-container">
+
+        <!-- HERO -->
+
+        <section class="attendance-hero">
+
+            <div class="attendance-icon">
+                <i class="fa-solid fa-calendar-check"></i>
+            </div>
+
+            <span class="attendance-badge">
+                ATTENDANCE TRACKER
+            </span>
+
+            <h1>Attendance Maker</h1>
+
+            <p>
+                Track your subject-wise attendance and know exactly
+                where you stand.
+            </p>
+
+        </section>
+
+
+        <!-- STUDENT DETAILS -->
+
+        <section class="attendance-card">
+
+            <div class="section-heading">
+
+                <div>
+                    <h2>
+                        <i class="fa-solid fa-user"></i>
+                        Student Details
+                    </h2>
+
+                    <p>
+                        Add your name and attendance target.
+                    </p>
+                </div>
+
+            </div>
+
+
+            <div class="student-form">
+
+                <div class="input-group">
+
+                    <label for="studentName">
+                        Student Name
+                    </label>
+
+                    <input type="text" id="studentName" placeholder="Enter your name">
+
+                </div>
+
+
+                <div class="input-group">
+
+                    <label for="targetAttendance">
+                        Target Attendance
+                    </label>
+
+                    <div class="target-input">
+
+                        <input type="number" id="targetAttendance" value="75" min="1" max="100">
+
+                        <span>%</span>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+        </section>
+
+
+        <!-- SUBJECT SECTION -->
+
+        <section class="attendance-card">
+
+            <div class="section-heading subject-heading">
+
+                <div>
+                    <h2>
+                        <i class="fa-solid fa-book-open"></i>
+                        Subjects
+                    </h2>
+
+                    <p>
+                        Enter total and attended classes for each subject.
+                    </p>
+                </div>
+
+                <button type="button" class="add-subject-btn" id="addSubjectBtn">
+                    <i class="fa-solid fa-plus"></i>
+                    Add Subject
+                </button>
+
+            </div>
+
+
+            <!-- SUBJECT LIST -->
+
+            <div id="subjectsList" class="subjects-list">
+
+                <!-- First subject -->
+
+                <div class="subject-row">
+
+                    <div class="subject-number">
+                        01
+                    </div>
+
+                    <div class="subject-name-field">
+
+                        <label>Subject</label>
+
+                        <input type="text" class="subject-name" placeholder="e.g. Mathematics">
+
+                    </div>
+
+                    <div class="attendance-input">
+
+                        <label>Total</label>
+
+                        <input type="number" class="total-classes" min="0" value="0">
+
+                    </div>
+
+                    <div class="attendance-input">
+
+                        <label>Present</label>
+
+                        <input type="number" class="present-classes" min="0" value="0">
+
+                    </div>
+
+                    <div class="subject-percentage">
+                        0%
+                    </div>
+
+                    <button type="button" class="remove-subject" title="Remove Subject">
+                        <i class="fa-solid fa-trash"></i>
+                    </button>
+
+                </div>
+
+            </div>
+
+
+            <!-- CALCULATE -->
+
+            <div class="action-area">
+
+                <button type="button" class="calculate-btn" id="calculateBtn">
+                    <i class="fa-solid fa-chart-simple"></i>
+                    Calculate Attendance
+                </button>
+
+                <button type="button" class="reset-btn" id="resetBtn">
+                    <i class="fa-solid fa-rotate-left"></i>
+                    Reset
+                </button>
+
+            </div>
+
+        </section>
+
+
+        <!-- RESULT -->
+
+        <section class="result-card" id="resultCard">
+
+            <div class="result-header">
+
+                <div>
+                    <span class="result-label">
+                        OVERALL ATTENDANCE
+                    </span>
+
+                    <h2 id="overallPercentage">
+                        0%
+                    </h2>
+                </div>
+
+                <div class="attendance-status" id="attendanceStatus">
+                    Add Classes
+                </div>
+
+            </div>
+
+
+            <!-- PROGRESS -->
+
+            <div class="overall-progress">
+
+                <div class="progress-track">
+
+                    <div class="progress-fill" id="overallProgress"></div>
+
+                </div>
+
+                <div class="progress-info">
+
+                    <span id="overallClasses">
+                        0 / 0 classes
+                    </span>
+
+                    <span id="targetText">
+                        Target: 75%
+                    </span>
+
+                </div>
+
+            </div>
+
+
+            <!-- STATISTICS -->
+
+            <div class="result-stats">
+
+                <div class="result-stat">
+
+                    <span>
+                        Total Classes
+                    </span>
+
+                    <strong id="totalClassesResult">
+                        0
+                    </strong>
+
+                </div>
+
+
+                <div class="result-stat">
+
+                    <span>
+                        Present
+                    </span>
+
+                    <strong id="presentClassesResult">
+                        0
+                    </strong>
+
+                </div>
+
+
+                <div class="result-stat">
+
+                    <span>
+                        Absent
+                    </span>
+
+                    <strong id="absentClassesResult">
+                        0
+                    </strong>
+
+                </div>
+
+            </div>
+
+
+            <!-- TARGET MESSAGE -->
+
+            <div class="target-message" id="targetMessage">
+                Enter your classes to see your attendance status.
+            </div>
+
+        </section>
+
+
+        <!-- BACK -->
+
+        <a href="../../index.html#tools" class="back-link">
+            <i class="fa-solid fa-arrow-left"></i>
+            Back to Tools
+        </a>
+    </main>
+
+
+    <!-- FOOTER -->
+
+    <footer class="footer">
+
+       <div class="footer-copy">
+
+            © <span id="year"></span> TOOLBOX.
+            Made with
+            <i class="fa-solid fa-heart"></i>
+            by Gorav.
+
+        </div>
+
+    </footer>
+
+
+    <script src="attendance-maker.js"></script>
+
+</body>
+
+</html>

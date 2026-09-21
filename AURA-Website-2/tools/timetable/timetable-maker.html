@@ -1,0 +1,289 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Timetable Maker | TOOLBOX</title>
+
+    <link rel="stylesheet" href="../../style.css">
+    <link rel="stylesheet" href="timetable-maker.css">
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/html2canvas/1.4.1/html2canvas.min.js"></script>
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+</head>
+
+<body class="timetable-page">
+
+    <header class="header">
+        <nav class="navbar">
+
+            <a href="../../index.html" class="logo">
+                TOOL<span>BOX</span>
+            </a>
+
+            <ul class="nav-links">
+                <li><a href="../../index.html">Home</a></li>
+                <li><a href="../../index.html">Tools</a></li>
+                <li><a href="../../about.html">About</a></li>
+            </ul>
+
+        </nav>
+    </header>
+
+
+    <main class="timetable-container">
+
+        <!-- HERO -->
+
+        <section class="timetable-hero">
+
+            <div class="timetable-icon">
+                <i class="fa-solid fa-calendar-days"></i>
+            </div>
+
+            <span class="timetable-badge">
+                Student Utility
+            </span>
+
+            <h1>Timetable <span>Maker</span></h1>
+
+            <p>
+                Create, manage and save your weekly college timetable easily.
+            </p>
+
+        </section>
+
+
+        <!-- BASIC DETAILS -->
+
+        <section class="timetable-card">
+
+            <div class="card-heading">
+                <div>
+                    <h2>Timetable Details</h2>
+                    <p>Enter your basic information.</p>
+                </div>
+
+                <i class="fa-solid fa-pen-to-square"></i>
+            </div>
+
+            <div class="details-grid">
+
+                <div class="input-group">
+                    <label for="studentName">Student Name</label>
+
+                    <input type="text" id="studentName" placeholder="Enter your name">
+                </div>
+
+
+                <div class="input-group">
+                    <label for="courseName">Course / Branch</label>
+
+                    <input type="text" id="courseName" placeholder="e.g. B.Tech CSE">
+                </div>
+
+
+                <div class="input-group">
+                    <label for="semester">Semester</label>
+
+                    <input type="text" id="semester" placeholder="e.g. 1st Semester">
+                </div>
+
+            </div>
+
+        </section>
+
+
+        <!-- ADD CLASS -->
+
+        <section class="timetable-card">
+
+            <div class="card-heading">
+
+                <div>
+                    <h2>Add Class</h2>
+                    <p>Add your subjects to the weekly timetable.</p>
+                </div>
+
+                <i class="fa-solid fa-plus"></i>
+
+            </div>
+
+
+            <form id="classForm" class="class-form">
+
+                <div class="form-grid">
+
+                    <div class="input-group">
+                        <label for="classDay">Day</label>
+
+                        <select id="classDay" required>
+                            <option value="">Select Day</option>
+                            <option value="Monday">Monday</option>
+                            <option value="Tuesday">Tuesday</option>
+                            <option value="Wednesday">Wednesday</option>
+                            <option value="Thursday">Thursday</option>
+                            <option value="Friday">Friday</option>
+                            <option value="Saturday">Saturday</option>
+                        </select>
+                    </div>
+
+
+                    <div class="input-group">
+                        <label for="subjectName">Subject</label>
+
+                        <input type="text" id="subjectName" placeholder="e.g. Programming in C" required>
+                    </div>
+
+
+                    <div class="input-group">
+                        <label for="teacherName">Teacher</label>
+
+                        <input type="text" id="teacherName" placeholder="Teacher name">
+                    </div>
+
+
+                    <div class="input-group">
+                        <label for="roomNumber">Room</label>
+
+                        <input type="text" id="roomNumber" placeholder="e.g. Lab 2">
+                    </div>
+
+
+                    <div class="input-group">
+                        <label for="startTime">Start Time</label>
+
+                        <input type="time" id="startTime" required>
+                    </div>
+
+
+                    <div class="input-group">
+                        <label for="endTime">End Time</label>
+
+                        <input type="time" id="endTime" required>
+                    </div>
+
+                </div>
+
+
+                <button type="submit" class="primary-btn">
+                    <i class="fa-solid fa-plus"></i>
+                    Add Class
+                </button>
+
+            </form>
+
+        </section>
+
+
+        <!-- TIMETABLE -->
+
+        <section class="timetable-card timetable-preview">
+
+            <div class="preview-header">
+
+                <div>
+                    <h2 id="displayTitle">Weekly Timetable</h2>
+
+                    <p id="displayInfo">
+                        Your classes will appear here.
+                    </p>
+                </div>
+
+                <div class="preview-actions">
+
+                    <button type="button" class="secondary-btn" id="printBtn">
+                        <i class="fa-solid fa-print"></i>
+                        Print
+                    </button>
+
+                    <button type="button" class="secondary-btn" id="downloadBtn">
+                        <i class="fa-solid fa-download"></i>
+                        Download
+                    </button>
+
+                    <button type="button" class="danger-btn" id="clearBtn">
+                        <i class="fa-solid fa-trash"></i>
+                        Clear
+                    </button>
+
+                </div>
+
+            </div>
+
+
+            <div class="table-wrapper">
+
+                <table class="timetable-table">
+
+                    <thead>
+                        <tr>
+                            <th>Time</th>
+                            <th>Monday</th>
+                            <th>Tuesday</th>
+                            <th>Wednesday</th>
+                            <th>Thursday</th>
+                            <th>Friday</th>
+                            <th>Saturday</th>
+                        </tr>
+                    </thead>
+
+                    <tbody id="timetableBody">
+                    </tbody>
+
+                </table>
+
+            </div>
+
+        </section>
+
+
+        <!-- MOBILE DAY VIEW -->
+
+        <section class="mobile-schedule timetable-card">
+
+            <div class="card-heading">
+
+                <div>
+                    <h2>Mobile Schedule</h2>
+                    <p>Easy-to-read view for smaller screens.</p>
+                </div>
+
+                <i class="fa-solid fa-mobile-screen-button"></i>
+
+            </div>
+
+            <div id="mobileSchedule"></div>
+
+        </section>
+
+
+        <a href="../../index.html" class="back-link">
+            <i class="fa-solid fa-arrow-left"></i>
+            Back to Tools
+        </a>
+
+    </main>
+
+
+    <footer class="timetable-footer">
+        <div class="footer-copy">
+
+            © <span id="year"></span> TOOLBOX.
+            Made with
+            <i class="fa-solid fa-heart"></i>
+            by Gorav.
+
+        </div>
+
+    </footer>
+
+
+    <script src="timetable-maker.js"></script>
+</body>
+
+</html>

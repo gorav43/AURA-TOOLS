@@ -1,0 +1,626 @@
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>TOOLBOX — Smart Digital Tools</title>
+
+    <meta name="description"
+        content="TOOLBOX brings powerful image, student, developer and everyday utility tools into one simple digital workspace.">
+
+    <meta name="theme-color" content="#0b0b14">
+
+    <link rel="stylesheet" href="style.css">
+
+    <!-- Icons -->
+    <link rel="stylesheet"
+        href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+</head>
+
+<body>
+
+    <!-- Animated Background -->
+    <div class="background" aria-hidden="true">
+        <div class="orb orb-one"></div>
+        <div class="orb orb-two"></div>
+        <div class="grid-bg"></div>
+    </div>
+
+    <!-- NAVBAR -->
+    <header class="navbar">
+
+        <a href="#home" class="logo" aria-label="TOOLBOX Home">
+            <span class="logo-icon">
+                <i class="fa-solid fa-toolbox"></i>
+            </span>
+
+            <span>TOOL<span class="purple">BOX</span></span>
+        </a>
+
+        <nav class="nav-links" id="navLinks" aria-label="Main navigation">
+            <a href="#home" class="active">Home</a>
+            <a href="#tools">All Tools</a>
+            <a href="about.html">About</a>
+        </nav>
+
+        <div class="nav-actions">
+
+            <button class="theme-btn"
+                id="themeBtn"
+                aria-label="Toggle light and dark theme"
+                type="button">
+                <i class="fa-solid fa-moon"></i>
+            </button>
+
+            <a href="#tools" class="nav-cta">
+                Explore Tools
+                <i class="fa-solid fa-arrow-right"></i>
+            </a>
+
+            <button class="menu-btn"
+                id="menuBtn"
+                aria-label="Toggle navigation"
+                aria-expanded="false"
+                type="button">
+                <i class="fa-solid fa-bars"></i>
+            </button>
+
+        </div>
+
+    </header>
+
+    <!-- MAIN -->
+    <main>
+
+        <!-- HERO SECTION -->
+        <section class="hero" id="home">
+
+            <div class="hero-content">
+
+                <div class="hero-badge">
+                    <span class="status-dot"></span>
+                    SMART DIGITAL TOOLS · ONE PLACE
+                </div>
+
+                <h1>
+                    Everything you need.
+                    <br>
+                    <span class="gradient-text">
+                        One powerful toolbox.
+                    </span>
+                </h1>
+
+                <p class="hero-description">
+                    Simplify your digital life with fast, useful and
+                    beautifully designed tools for everyday tasks,
+                    students, creators and developers.
+                </p>
+
+                <!-- SEARCH -->
+                <div class="search-box">
+
+                    <i class="fa-solid fa-magnifying-glass search-icon"
+                        aria-hidden="true"></i>
+
+                    <input
+                        type="text"
+                        id="searchInput"
+                        placeholder="Search tools... e.g. QR Generator"
+                        autocomplete="off"
+                        aria-label="Search tools">
+
+                    <span class="search-shortcut">⌘ K</span>
+
+                    <button
+                        id="searchBtn"
+                        aria-label="Search tools"
+                        type="button">
+                        <i class="fa-solid fa-arrow-right"></i>
+                    </button>
+
+                </div>
+
+                <div class="quick-search">
+                    <span>Popular:</span>
+
+                    <button type="button" data-search="QR Generator">
+                        QR Generator
+                    </button>
+
+                    <button type="button" data-search="CGPA Calculator">
+                        CGPA
+                    </button>
+
+                    <button type="button" data-search="Image Compressor">
+                        Image Tools
+                    </button>
+                </div>
+
+                <!-- HERO STATS -->
+                <div class="hero-stats">
+
+                    <div>
+                        <strong>11<span>+</span></strong>
+                        <small>Useful Tools</small>
+                    </div>
+
+                    <div class="stat-line"></div>
+
+                    <div>
+                        <strong>4</strong>
+                        <small>Tool Categories</small>
+                    </div>
+
+                    <div class="stat-line"></div>
+
+                    <div>
+                        <strong>∞</strong>
+                        <small>Possibilities</small>
+                    </div>
+
+                </div>
+
+            </div>
+
+            <!-- HERO VISUAL -->
+            <div class="hero-visual">
+
+                <div class="visual-glow"></div>
+
+                <div class="floating-card float-one">
+                    <i class="fa-solid fa-bolt"></i>
+                    <span>Fast & Simple</span>
+                </div>
+
+                <div class="floating-card float-two">
+                    <i class="fa-solid fa-shield-halved"></i>
+                    <span>Privacy First</span>
+                </div>
+
+                <div class="dashboard-preview">
+
+                    <div class="preview-top">
+
+                        <div class="preview-dots">
+                            <span></span>
+                            <span></span>
+                            <span></span>
+                        </div>
+
+                        <span class="preview-title">
+                            TOOLBOX / Workspace
+                        </span>
+
+                        <i class="fa-solid fa-ellipsis"
+                            aria-hidden="true"></i>
+
+                    </div>
+
+                    <div class="preview-heading">
+
+                        <div>
+                            <span>YOUR DIGITAL WORKSPACE</span>
+                            <h3>
+                                Welcome back,
+                                <b>Gorav.</b>
+                            </h3>
+                        </div>
+
+                        <div class="preview-avatar">G</div>
+
+                    </div>
+
+                    <div class="preview-search">
+                        <i class="fa-solid fa-search"></i>
+                        <span>Find a tool...</span>
+                        <i class="fa-solid fa-sliders"></i>
+                    </div>
+
+                    <div class="preview-label">
+                        QUICK ACCESS
+                    </div>
+
+                    <div class="preview-tools">
+
+                        <div class="preview-tool">
+                            <div class="mini-icon purple-icon">
+                                <i class="fa-solid fa-image"></i>
+                            </div>
+
+                            <span>Image Tools</span>
+
+                            <i class="fa-solid fa-arrow-up-right-from-square"></i>
+                        </div>
+
+                        <div class="preview-tool">
+                            <div class="mini-icon blue-icon">
+                                <i class="fa-solid fa-graduation-cap"></i>
+                            </div>
+
+                            <span>Student Tools</span>
+
+                            <i class="fa-solid fa-arrow-up-right-from-square"></i>
+                        </div>
+
+                        <div class="preview-tool">
+                            <div class="mini-icon pink-icon">
+                                <i class="fa-solid fa-code"></i>
+                            </div>
+
+                            <span>Developer Tools</span>
+
+                            <i class="fa-solid fa-arrow-up-right-from-square"></i>
+                        </div>
+
+                        <div class="preview-tool">
+                            <div class="mini-icon green-icon">
+                                <i class="fa-solid fa-calculator"></i>
+                            </div>
+
+                            <span>Daily Utility</span>
+
+                            <i class="fa-solid fa-arrow-up-right-from-square"></i>
+                        </div>
+
+                    </div>
+
+                    <div class="preview-bottom">
+
+                        <span>
+                            <i class="fa-solid fa-circle-check"></i>
+                            Your workspace is ready
+                        </span>
+
+                        <span>TOOLBOX</span>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+        </section>
+
+        <!-- TOOLS SECTION -->
+        <section class="tools-section" id="tools">
+
+            <div class="section-heading">
+
+                <div>
+                    <span class="section-label">
+                        EXPLORE OUR COLLECTION
+                    </span>
+
+                    <h2>
+                        Tools that make life
+                        <span>easier.</span>
+                    </h2>
+                </div>
+
+                <p>
+                    From everyday tasks to developer utilities,
+                    discover simple tools designed to help you
+                    work smarter and faster.
+                </p>
+
+            </div>
+
+            <!-- FILTERS -->
+            <div class="filter-row">
+
+                <div class="filter-buttons">
+
+                    <button
+                        class="filter-btn active"
+                        data-filter="all"
+                        type="button">
+                        All Tools
+                    </button>
+
+                    <button
+                        class="filter-btn"
+                        data-filter="image"
+                        type="button">
+                        Image
+                    </button>
+
+                    <button
+                        class="filter-btn"
+                        data-filter="student"
+                        type="button">
+                        Student
+                    </button>
+
+                    <button
+                        class="filter-btn"
+                        data-filter="developer"
+                        type="button">
+                        Developer
+                    </button>
+
+                    <button
+                        class="filter-btn"
+                        data-filter="utility"
+                        type="button">
+                        Utility
+                    </button>
+
+                    <button
+                        class="filter-btn"
+                        data-filter="document"
+                        type="button">
+                        Documents
+                    </button>
+
+                </div>
+
+                <span class="results-count" id="resultsCount">
+                    11 tools available
+                </span>
+
+            </div>
+
+            <!-- TOOL GRID -->
+            <div class="tools-grid" id="toolsGrid">
+
+                <!-- IMAGE COMPRESSOR -->
+                <a href="tools/tools--/image-compressor.html" class="tool-card" data-category="image" data-name="image compressor">
+                    <div class="card-top">
+                        <div class="tool-icon purple-icon"><i class="fa-solid fa-file-image"></i></div>
+                        <span class="tool-tag">IMAGE</span>
+                    </div>
+                    <h3>Image Compressor</h3>
+                    <p>Reduce image file size while maintaining excellent visual quality.</p>
+                    <div class="card-bottom">
+                        <span class="tool-status"><i class="fa-solid fa-bolt"></i> Quick Tool</span>
+                        <span class="open-tool" aria-hidden="true"><i class="fa-solid fa-arrow-up-right"></i></span>
+                    </div>
+                </a>
+
+                <!-- IMAGE TOOLS -->
+                <a href="tools/tools--/image-resizer.html" class="tool-card" data-category="image" data-name="image tools image resizer image cropper">
+                    <div class="card-top">
+                        <div class="tool-icon blue-icon"><i class="fa-solid fa-images"></i></div>
+                        <span class="tool-tag">IMAGE</span>
+                    </div>
+                    <h3>Image Tools</h3>
+                    <p>Resize and prepare your images for different purposes.</p>
+                    <div class="card-bottom">
+                        <span class="tool-status"><i class="fa-solid fa-bolt"></i> Quick Tool</span>
+                        <span class="open-tool" aria-hidden="true"><i class="fa-solid fa-arrow-up-right"></i></span>
+                    </div>
+                </a>
+
+                <!-- CGPA -->
+                <a href="tools/cgpa/cgpa-calculator.html" class="tool-card" data-category="student" data-name="cgpa calculator">
+                    <div class="card-top">
+                        <div class="tool-icon green-icon"><i class="fa-solid fa-graduation-cap"></i></div>
+                        <span class="tool-tag">STUDENT</span>
+                    </div>
+                    <h3>CGPA Calculator</h3>
+                    <p>Calculate your semester CGPA quickly and easily.</p>
+                    <div class="card-bottom">
+                        <span class="tool-status"><i class="fa-solid fa-bolt"></i> Quick Tool</span>
+                        <span class="open-tool" aria-hidden="true"><i class="fa-solid fa-arrow-up-right"></i></span>
+                    </div>
+                </a>
+
+                <!-- ATTENDANCE -->
+                <a href="tools/attendance-maker/attendance-maker.html" class="tool-card" data-category="student" data-name="attendance calculator attendance maker">
+                    <div class="card-top">
+                        <div class="tool-icon pink-icon"><i class="fa-solid fa-calendar-check"></i></div>
+                        <span class="tool-tag">STUDENT</span>
+                    </div>
+                    <h3>Attendance Calculator</h3>
+                    <p>Calculate attendance percentage and track your class requirements.</p>
+                    <div class="card-bottom">
+                        <span class="tool-status"><i class="fa-solid fa-bolt"></i> Quick Tool</span>
+                        <span class="open-tool" aria-hidden="true"><i class="fa-solid fa-arrow-up-right"></i></span>
+                    </div>
+                </a>
+
+                <!-- QR -->
+                <a href="tools/qr-generator/qr.html" class="tool-card" data-category="developer" data-name="qr code generator qr generator">
+                    <div class="card-top">
+                        <div class="tool-icon cyan-icon"><i class="fa-solid fa-qrcode"></i></div>
+                        <span class="tool-tag">DEVELOPER</span>
+                    </div>
+                    <h3>QR Code Generator</h3>
+                    <p>Create QR codes for links, text and useful information.</p>
+                    <div class="card-bottom">
+                        <span class="tool-status"><i class="fa-solid fa-bolt"></i> Quick Tool</span>
+                        <span class="open-tool" aria-hidden="true"><i class="fa-solid fa-arrow-up-right"></i></span>
+                    </div>
+                </a>
+
+                <!-- UNIT -->
+                <a href="tools/unit/unit.html" class="tool-card" data-category="utility" data-name="unit converter length weight temperature">
+                    <div class="card-top">
+                        <div class="tool-icon violet-icon"><i class="fa-solid fa-arrows-left-right"></i></div>
+                        <span class="tool-tag">UTILITY</span>
+                    </div>
+                    <h3>Unit Converter</h3>
+                    <p>Convert length, weight, temperature and other common units.</p>
+                    <div class="card-bottom">
+                        <span class="tool-status"><i class="fa-solid fa-bolt"></i> Quick Tool</span>
+                        <span class="open-tool" aria-hidden="true"><i class="fa-solid fa-arrow-up-right"></i></span>
+                    </div>
+                </a>
+
+                <!-- WORD -->
+                <a href="tools/word/word-counter.html" class="tool-card" data-category="utility" data-name="word counter character counter">
+                    <div class="card-top">
+                        <div class="tool-icon red-icon"><i class="fa-solid fa-file-lines"></i></div>
+                        <span class="tool-tag">UTILITY</span>
+                    </div>
+                    <h3>Word Counter</h3>
+                    <p>Count words, characters and sentences in your text.</p>
+                    <div class="card-bottom">
+                        <span class="tool-status"><i class="fa-solid fa-bolt"></i> Quick Tool</span>
+                        <span class="open-tool" aria-hidden="true"><i class="fa-solid fa-arrow-up-right"></i></span>
+                    </div>
+                </a>
+
+                <!-- IMAGE TO PDF -->
+                <a href="tools/pdf/image-to-pdf.html" class="tool-card" data-category="document" data-name="image to pdf pdf converter">
+                    <div class="card-top">
+                        <div class="tool-icon red-icon"><i class="fa-solid fa-file-pdf"></i></div>
+                        <span class="tool-tag">DOCUMENT</span>
+                    </div>
+                    <h3>Image to PDF</h3>
+                    <p>Convert multiple images into one convenient PDF file.</p>
+                    <div class="card-bottom">
+                        <span class="tool-status"><i class="fa-solid fa-bolt"></i> Quick Tool</span>
+                        <span class="open-tool" aria-hidden="true"><i class="fa-solid fa-arrow-up-right"></i></span>
+                    </div>
+                </a>
+
+                <!-- EXAM COUNTDOWN -->
+                <a href="tools/exam-countdown/exam-countdown.html" class="tool-card" data-category="student" data-name="exam countdown exam timer">
+                    <div class="card-top">
+                        <div class="tool-icon green-icon"><i class="fa-solid fa-hourglass-half"></i></div>
+                        <span class="tool-tag">STUDENT</span>
+                    </div>
+                    <h3>Exam Countdown</h3>
+                    <p>Track the time remaining until your exams.</p>
+                    <div class="card-bottom">
+                        <span class="tool-status"><i class="fa-solid fa-bolt"></i> Quick Tool</span>
+                        <span class="open-tool" aria-hidden="true"><i class="fa-solid fa-arrow-up-right"></i></span>
+                    </div>
+                </a>
+
+                <!-- TIMETABLE -->
+                <a href="tools/timetable/timetable-maker.html" class="tool-card" data-category="student" data-name="timetable maker timetable">
+                    <div class="card-top">
+                        <div class="tool-icon blue-icon"><i class="fa-solid fa-calendar-days"></i></div>
+                        <span class="tool-tag">STUDENT</span>
+                    </div>
+                    <h3>Timetable Maker</h3>
+                    <p>Create and manage your weekly college timetable.</p>
+                    <div class="card-bottom">
+                        <span class="tool-status"><i class="fa-solid fa-bolt"></i> Quick Tool</span>
+                        <span class="open-tool" aria-hidden="true"><i class="fa-solid fa-arrow-up-right"></i></span>
+                    </div>
+                </a>
+
+                <!-- ASSIGNMENT TRACKER -->
+                <a href="tools/assignment/assignment-tracker.html" class="tool-card" data-category="student" data-name="assignment tracker assignments">
+                    <div class="card-top">
+                        <div class="tool-icon orange-icon"><i class="fa-solid fa-list-check"></i></div>
+                        <span class="tool-tag">STUDENT</span>
+                    </div>
+                    <h3>Assignment Tracker</h3>
+                    <p>Track assignments, deadlines and completed work.</p>
+                    <div class="card-bottom">
+                        <span class="tool-status"><i class="fa-solid fa-bolt"></i> Quick Tool</span>
+                        <span class="open-tool" aria-hidden="true"><i class="fa-solid fa-arrow-up-right"></i></span>
+                    </div>
+                </a>
+
+            </div>
+
+            <!-- EMPTY SEARCH -->
+            <div class="no-results" id="noResults">
+
+                <i class="fa-solid fa-magnifying-glass"></i>
+
+                <h3>No tools found</h3>
+
+                <p>
+                    Try searching with another keyword.
+                </p>
+
+                <button id="resetSearch" type="button">
+                    Show all tools
+                </button>
+
+            </div>
+
+        </section>
+
+        <!-- ABOUT / CTA SECTION -->
+        <section class="cta-section" id="about">
+
+            <div class="cta-content">
+
+                <span class="section-label">
+                    BUILT FOR EVERYONE
+                </span>
+
+                <h2>
+                    Your everyday tools.
+                    <br>
+                    <span>Reimagined.</span>
+                </h2>
+
+                <p>
+                    Simple interfaces. Useful functionality.
+                    A smarter way to complete everyday digital tasks.
+                </p>
+
+                <a href="#tools" class="primary-btn">
+                    Explore all tools
+                    <i class="fa-solid fa-arrow-right"></i>
+                </a>
+
+            </div>
+
+            <div class="cta-symbol" aria-hidden="true">
+                <i class="fa-solid fa-toolbox"></i>
+            </div>
+
+        </section>
+
+    </main>
+
+    <!-- FOOTER -->
+    <footer class="footer">
+
+        <div class="footer-brand">
+
+            <a href="#home" class="logo" aria-label="TOOLBOX Home">
+
+                <span class="logo-icon">
+                    <i class="fa-solid fa-toolbox"></i>
+                </span>
+
+                <span>
+                    TOOL<span class="purple">BOX</span>
+                </span>
+
+            </a>
+
+            <p>
+                A smarter collection of digital utilities.
+            </p>
+
+        </div>
+
+        <div class="footer-links">
+
+            <a href="#home">Home</a>
+            <a href="#tools">Tools</a>
+            <a href="about.html">About</a>
+
+        </div>
+
+        <div class="footer-copy">
+
+            © <span id="year"></span> TOOLBOX.
+            Made with
+            <i class="fa-solid fa-heart"></i>
+            by Gorav.
+
+        </div>
+
+    </footer>
+
+    <!-- JAVASCRIPT -->
+    <script src="script.js"></script>
+
+</body>
+
+</html>
